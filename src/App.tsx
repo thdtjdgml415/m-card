@@ -1,26 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Text from '@shared/Text'
+import './App.css'
+import Button from './components/shared/Button'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Text typography="t1" color="red" display="block">
+        t1
+      </Text>
+      <Text typography="t2" color="blue">
+        t2
+      </Text>
+      <Text typography="t3" color="green">
+        t3
+      </Text>
+      <Text typography="t4" color="white">
+        t4
+      </Text>
+      <Text typography="t5" color="red">
+        t5
+      </Text>
+
+      <hr />
+      <Button color="success">클릭해주세요</Button>
+      <Button color="success" weak={true}>
+        클릭해주세요
+      </Button>
+      <Button color="error">클릭해주세요</Button>
+      <Button color="error" weak={true}>
+        클릭해주세요
+      </Button>
+      <Button color="primary">클릭해주세요</Button>
+      <Button color="primary" weak={true}>
+        클릭해주세요
+      </Button>
+      <Button color="primary" full={true}>
+        클릭해주세요
+      </Button>
+      <Button disabled={true}>클릭해주세요</Button>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
