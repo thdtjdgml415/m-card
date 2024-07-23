@@ -32,6 +32,7 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
       setFocused(false)
       onBlur?.(event)
     }
+
     return (
       <div>
         {label ? (
@@ -57,7 +58,9 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
             color={labelColor}
             display="inline-block"
             style={{ marginTop: 6, fontSize: 12 }}
-          />
+          >
+            {helpMessage}
+          </Text>
         ) : null}
       </div>
     )

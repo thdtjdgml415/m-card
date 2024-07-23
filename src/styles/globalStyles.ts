@@ -147,14 +147,8 @@ export const globalStyles = css`
   }
 
   a {
-    color: #fff;
+    color: #000000;
     text-decoration: none;
     outline: none;
-  }
-  a:hover,
-  a:active {
-    text-decoration: none;
-    color: #fff;
-    background-color: #f59000;
   }
 `
