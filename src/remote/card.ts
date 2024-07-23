@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import {
   collection,
   doc,
@@ -9,15 +8,11 @@ import {
   QuerySnapshot,
   startAfter,
 } from 'firebase/firestore'
-=======
-import { collection, getDocs } from 'firebase/firestore'
->>>>>>> 77b9a6a2174119c93ca9bfacc069cc914a53103a
 import { store } from './firebase'
 
 import { Card } from '@/models/card'
 import { COLLECTION } from '@constants/index'
 
-<<<<<<< HEAD
 // 지금 보이고 있는 마지막 요소
 export async function getCards(pageParams?: QuerySnapshot<Card>) {
   // pageParams를 기준으로 null이면 최초 10개의 데이터 만 불러오고
@@ -49,13 +44,4 @@ export async function getCard(id: string) {
     id,
     ...(snapshot.data() as Card),
   }
-=======
-export async function getCards() {
-  const cardSnapShot = await getDocs(collection(store, COLLECTION.CARD))
-
-  return cardSnapShot.docs.map((doc) => ({
-    id: doc.id,
-    ...(doc.data() as Card),
-  }))
->>>>>>> 77b9a6a2174119c93ca9bfacc069cc914a53103a
 }
