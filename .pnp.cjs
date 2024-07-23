@@ -53,8 +53,11 @@ const RAW_RUNTIME_STATE =
           ["prettier", "npm:3.3.3"],\
           ["react", "npm:18.3.1"],\
           ["react-dom", "virtual:4bde3fb829209b70b66ec1c980e64339296cceaa7fcaeff1bc42cb2a3e2bcd80ba0d46ebe75899e3dae8d6e96db01252db146f3f032cbf5e451d3b6850764fd5#npm:18.3.1"],\
+<<<<<<< HEAD
           ["react-infinite-scroll-component", "virtual:4bde3fb829209b70b66ec1c980e64339296cceaa7fcaeff1bc42cb2a3e2bcd80ba0d46ebe75899e3dae8d6e96db01252db146f3f032cbf5e451d3b6850764fd5#npm:6.1.0"],\
           ["react-query", "virtual:4bde3fb829209b70b66ec1c980e64339296cceaa7fcaeff1bc42cb2a3e2bcd80ba0d46ebe75899e3dae8d6e96db01252db146f3f032cbf5e451d3b6850764fd5#npm:3.39.3"],\
+=======
+>>>>>>> 77b9a6a2174119c93ca9bfacc069cc914a53103a
           ["react-router-dom", "virtual:4bde3fb829209b70b66ec1c980e64339296cceaa7fcaeff1bc42cb2a3e2bcd80ba0d46ebe75899e3dae8d6e96db01252db146f3f032cbf5e451d3b6850764fd5#npm:6.25.1"],\
           ["react-scripts", "virtual:4bde3fb829209b70b66ec1c980e64339296cceaa7fcaeff1bc42cb2a3e2bcd80ba0d46ebe75899e3dae8d6e96db01252db146f3f032cbf5e451d3b6850764fd5#npm:5.0.1"],\
           ["swiper", "npm:9.4.1"],\
@@ -14042,8 +14045,11 @@ const RAW_RUNTIME_STATE =
           ["prettier", "npm:3.3.3"],\
           ["react", "npm:18.3.1"],\
           ["react-dom", "virtual:4bde3fb829209b70b66ec1c980e64339296cceaa7fcaeff1bc42cb2a3e2bcd80ba0d46ebe75899e3dae8d6e96db01252db146f3f032cbf5e451d3b6850764fd5#npm:18.3.1"],\
+<<<<<<< HEAD
           ["react-infinite-scroll-component", "virtual:4bde3fb829209b70b66ec1c980e64339296cceaa7fcaeff1bc42cb2a3e2bcd80ba0d46ebe75899e3dae8d6e96db01252db146f3f032cbf5e451d3b6850764fd5#npm:6.1.0"],\
           ["react-query", "virtual:4bde3fb829209b70b66ec1c980e64339296cceaa7fcaeff1bc42cb2a3e2bcd80ba0d46ebe75899e3dae8d6e96db01252db146f3f032cbf5e451d3b6850764fd5#npm:3.39.3"],\
+=======
+>>>>>>> 77b9a6a2174119c93ca9bfacc069cc914a53103a
           ["react-router-dom", "virtual:4bde3fb829209b70b66ec1c980e64339296cceaa7fcaeff1bc42cb2a3e2bcd80ba0d46ebe75899e3dae8d6e96db01252db146f3f032cbf5e451d3b6850764fd5#npm:6.25.1"],\
           ["react-scripts", "virtual:4bde3fb829209b70b66ec1c980e64339296cceaa7fcaeff1bc42cb2a3e2bcd80ba0d46ebe75899e3dae8d6e96db01252db146f3f032cbf5e451d3b6850764fd5#npm:5.0.1"],\
           ["swiper", "npm:9.4.1"],\
