@@ -5,12 +5,12 @@ import Form from '@components/signup/Form'
 import { COLLECTION } from '@constants'
 import { FormValues } from '@models/signup'
 import { auth, store } from '@remote/firebase'
-import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function SignupPage() {
   // 회원가입 처리 로직
+  const navigate = useNavigate()
   const handleSubmit = async (formValues: FormValues) => {
-    console.log('formValues', formValues)
     const { email, password, name } = formValues
     const { user } = await createUserWithEmailAndPassword(auth, email, password)
     // db에 데이터를 닮기 위해 사용
@@ -26,6 +26,7 @@ function SignupPage() {
     await setDoc(doc(collection(store, COLLECTION.USER), user.uid), newUser)
 
     // TOTO : 로그인
+    navigate('/')
   }
   return (
     <div>

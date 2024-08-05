@@ -5,15 +5,38 @@ import Top from '@/components/shared/Top'
 import { getCard } from '@/remote/card'
 import { colors } from '@/styles/colorPalette'
 import { css } from '@emotion/react'
+
 import Flex from '@shared/Flex'
+
 import { motion } from 'framer-motion'
+import { useCallback } from 'react'
 import { useQuery } from 'react-query'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
+
+import useUser from '@/hooks/auth/useUser'
+import { useAlertContext } from '@contexts/AlertContext'
+
 function CardPage() {
   const { id = '' } = useParams()
+  const navigate = useNavigate()
+  const user = useUser()
+  const { open } = useAlertContext()
   const { data } = useQuery(['card', id], () => getCard(id), {
     enabled: id !== '',
   })
+
+  const moveToApply = useCallback(() => {
+    if (user == null) {
+      open({
+        title: '로그인이 필요한 기능힙니다.',
+        onButtonClick: () => {
+          navigate(`/signin`)
+        },
+      })
+      return
+    }
+    navigate(`/apply/${id}`)
+  }, [user, id, open, navigate])
 
   if (data == null) return null
 
@@ -28,6 +51,7 @@ function CardPage() {
         {benefit.map((text, index) => {
           return (
             <motion.li
+              key={text}
               initial={{ opacity: 0, translateX: -90 }}
               animate={{ opacity: 1, translateX: 0 }}
               transition={{
@@ -38,7 +62,6 @@ function CardPage() {
             >
               <ListRow
                 as="div"
-                key={text}
                 left={<IconCheck />}
                 contents={
                   <ListRow.Texts title={`혜택 ${index + 1}`} subTitle={text} />
@@ -54,7 +77,12 @@ function CardPage() {
           <Text typography="t7">{removeHTMLTages(promotion.terms)}</Text>
         </Flex>
       ) : null}
-      <FixedBottomButton label="신청하기" onClick={() => {}} />
+      <FixedBottomButton
+        label="1분만에 신청하고 혜택받기"
+        onClick={() => {
+          moveToApply()
+        }}
+      />
     </div>
   )
 }
@@ -78,21 +106,7 @@ function IconCheck() {
 
 // 데이터에 있는 태그를 지우는 함수
 function removeHTMLTages(text: string) {
-  let output = ''
-
-  for (let i = 0; i < text.length; i++) {
-    if (text[i] === '<') {
-      for (let j = i + 1; j < text.length; j += 1) {
-        if (text[j] === '>') {
-          i = j
-          break
-        }
-      }
-    } else {
-      output += text[i]
-    }
-  }
-  return output
+  return text.replace(/<\/?[^>]+(>|$)/g, '')
 }
 
 const termsContainerStyles = css`

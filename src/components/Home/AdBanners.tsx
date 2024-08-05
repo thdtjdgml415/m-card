@@ -11,8 +11,18 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import Flex from '../shared/Flex'
 import Text from '../shared/Text'
 function AdBanners() {
-  const { data } = useQuery(['adBanners'], () => getAdBanner())
+  const { data, isLoading } = useQuery(['adBanners'], () => getAdBanner())
 
+  if (data == null || isLoading) {
+    return (
+      <Container>
+        <Flex direction="column" css={bannerContainerStyles}>
+          <Text bold={true}>로딩</Text>
+          <Text typography="t7"></Text>
+        </Flex>
+      </Container>
+    )
+  }
   return (
     <Container>
       <Swiper spaceBetween={8} autoplay={true}>
