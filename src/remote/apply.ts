@@ -32,8 +32,9 @@ export async function updateApplyCard({
       where('cardId', '==', cardId),
     ),
   )
-  console.log('카드 가져와 업데이트 ', snapshot)
+
   const [applied] = snapshot.docs
+  console.log(applied)
 
   updateDoc(applied.ref, applyValues)
 }

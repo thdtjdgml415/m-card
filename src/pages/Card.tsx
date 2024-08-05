@@ -112,7 +112,7 @@ function IconCheck() {
 
 // 데이터에 있는 태그를 지우는 함수
 function removeHTMLTages(text: string) {
-  return text.replace(/<\/?[^>]+(>|$)/g, '')
+  return text?.replace(/<\/?[^>]+(>|$)/g, '')
 }
 
 const termsContainerStyles = css`

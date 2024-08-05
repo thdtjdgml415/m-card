@@ -45,7 +45,9 @@ function ApplyPage() {
         }
         setReadyToPoll(true)
       },
-      onError(err) {},
+      onError(err) {
+        console.log(err)
+      },
       suspense: true,
     },
   })
@@ -76,7 +78,7 @@ function ApplyPage() {
       })
       navigate('/apply/done?success=false', { replace: true })
     },
-    enabled: true || readyToPoll,
+    enabled: readyToPoll,
   })
 
   // 카드 신청 함수
