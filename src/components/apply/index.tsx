@@ -29,6 +29,7 @@ function Apply({ onSubmit }: { onSubmit: (applyValues: ApplyValues) => void }) {
 
   useEffect(() => {
     if (applyValues.step === 3) {
+      console.log('카드신청')
       localStorage.removeItem(strageKey)
       onSubmit({
         ...applyValues,

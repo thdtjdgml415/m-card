@@ -20,7 +20,7 @@ function Review() {
       enabled: inView,
     },
   )
-  console.log(inView)
+
   return (
     <div ref={ref}>
       {isLoading ? (

@@ -17,7 +17,8 @@ function useApplyCardMutation({
     onSuccess: () => {
       onSuccess()
     },
-    onError: () => {
+    onError: (err) => {
+      console.log(err)
       open({
         title: '카드를 신청하지 못 했습니다.. 나중에 다시 시도해주세요',
         onButtonClick: () => {
